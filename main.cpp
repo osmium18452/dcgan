@@ -13,9 +13,13 @@ int main() {
 #else
     const std::string data_root=R"(/remote-home/liuwenbo/pycproj/tsdata/data/)";
 #endif
-    const std::string train_set_file="swat.att.n0a1.csv";
-    const std::string test_set_file="swat.nor.csv";
+    const std::string train_set_file="train.tsv";
+    const std::string test_set_file="test.tsv";
+    const std::string label_file="label.tsv";
     std::ifstream input_file(data_root+train_set_file);
+    const int sensor_num=51;
+    const int train_set_row=1;
+    const int test_set_row=1;
     int line_num=0,column_num=0;
     for (std::string line_buffer; std::getline(input_file, line_buffer); )
     {
